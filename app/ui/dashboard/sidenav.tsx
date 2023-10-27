@@ -1,8 +1,8 @@
 import NavLinks from '@/app/ui/dashboard/nav-links'
+import { signOut } from '@/auth'
 import { PowerIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import AcmeLogo from '../acme-logo'
-// import { signOut } from '@/auth';
 
 export default function SideNav() {
   return (
@@ -21,7 +21,7 @@ export default function SideNav() {
         <form
           action={async () => {
             'use server'
-            // await signOut();
+            await signOut()
           }}
         >
           <button className='flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3'>

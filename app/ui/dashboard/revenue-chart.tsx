@@ -1,3 +1,4 @@
+import { fetchRevenue } from '@/app/lib/data'
 import { generateYAxis } from '@/app/lib/utils'
 import { lusitana } from '@/app/ui/fonts'
 import { CalendarIcon } from '@heroicons/react/24/outline'
@@ -9,8 +10,9 @@ import { CalendarIcon } from '@heroicons/react/24/outline'
 // https://airbnb.io/visx/
 
 export default async function RevenueChart() {
+  const revenue = await fetchRevenue()
+
   const chartHeight = 350
-  const revenue: any[] = []
   const { yAxisLabels, topLabel } = generateYAxis(revenue)
 
   if (!revenue || revenue.length === 0) {
