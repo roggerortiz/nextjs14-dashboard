@@ -1,16 +1,11 @@
 import AcmeLogo from '@/app/ui/acme-logo';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import { LoginSkeleton } from '../ui/skeletons';
 
 const LoginForm = dynamic(() => import('@/app/ui/login-form'), {
   ssr: false,
-  loading: () => (
-    <div className="space-y-3">
-      <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
-        Loading...
-      </div>
-    </div>
-  ),
+  loading: () => <LoginSkeleton />,
 });
 
 export const metadata: Metadata = {

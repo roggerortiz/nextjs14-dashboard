@@ -1,8 +1,8 @@
 import { fetchInvoicesPages } from '@/app/lib/data';
 import { lusitana } from '@/app/ui/fonts';
 import { CreateInvoice } from '@/app/ui/invoices/buttons';
-import Pagination from '@/app/ui/invoices/pagination';
 import Table from '@/app/ui/invoices/table';
+import Pagination from '@/app/ui/pagination';
 import { InvoicesTableSkeleton, SearchSkeleton } from '@/app/ui/skeletons';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
