@@ -4,6 +4,7 @@ import { CreateInvoice } from '@/app/ui/invoices/buttons';
 import Pagination from '@/app/ui/invoices/pagination';
 import Table from '@/app/ui/invoices/table';
 import { InvoicesTableSkeleton, SearchSkeleton } from '@/app/ui/skeletons';
+import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
@@ -11,6 +12,10 @@ const Search = dynamic(() => import('@/app/ui/search'), {
   ssr: false,
   loading: () => <SearchSkeleton placeholder="Search invoices..." />,
 });
+
+export const metadata: Metadata = {
+  title: 'Invoices',
+};
 
 export default async function Page({
   searchParams,

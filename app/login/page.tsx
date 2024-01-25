@@ -1,4 +1,5 @@
 import AcmeLogo from '@/app/ui/acme-logo';
+import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
 const LoginForm = dynamic(() => import('@/app/ui/login-form'), {
@@ -11,6 +12,10 @@ const LoginForm = dynamic(() => import('@/app/ui/login-form'), {
     </div>
   ),
 });
+
+export const metadata: Metadata = {
+  title: 'Login',
+};
 
 export default function LoginPage() {
   return (
